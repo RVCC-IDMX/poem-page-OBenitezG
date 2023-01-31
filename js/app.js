@@ -1,0 +1,1 @@
+console.log("Poem:Edgar Allan Poe & Picture:Osman Rana");
