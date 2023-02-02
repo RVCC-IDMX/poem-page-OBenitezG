@@ -75,6 +75,8 @@ select {
 
 /* After reset */
 
+/* https://clamp.font-size.app/ */
+
 body {
   background-color: #201c20;
   font-family: "Cabin", sans-serif;
@@ -124,7 +126,8 @@ h2 {
   color: white;
   text-align: right;
   padding-right: 2rem;
-  font-size: 1.125rem;
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.9091rem + 0.4545vw, 1.25rem);
 }
 
 /* Media Screens */
