@@ -20,8 +20,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -60,9 +60,9 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -75,102 +75,84 @@ select {
 
 /* After reset */
 
+/* https://clamp.font-size.app/ */
+
 body {
-    background-color: #201c20;
-    font-family: 'Cabin', sans-serif;
+  background-color: #201c20;
+  font-family: "Cabin", sans-serif;
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.6522rem + 1.7391vw, 1.5rem);
+  padding-bottom: 2.5rem;
 }
 
 .container {
-    display: grid;
-    align-items: center; 
-    grid-template-columns: 70% 30%;
-    height: 100vh;
-   }
-   
-img {
-    height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.image {
+  background-color: aliceblue;
+  background-image: url("../forest-road-osman-rana.jpg");
+  height: 100%;
+  min-height: 50vh;
+  background-size: cover;
+  background-position: center bottom;
 }
 
 .text {
-    margin-left: 1rem;
-    padding-left: 1.3em;
+  padding: 0.5rem;
+}
+
+.poem {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-inline: auto;
 }
 
 p {
-    margin-bottom: 2rem;
-    color: white;
-    font-size: 26px;
+  margin-bottom: 2rem;
+  color: white;
 }
 
-h3 {
-    color: white;
-    text-align: right;
-    padding-top: 2em;
-    padding-right: 4em;
-    font-size: 16px;
+h1,
+h2 {
+  color: white;
+  text-align: right;
+  padding-right: 2rem;
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.9091rem + 0.4545vw, 1.25rem);
 }
 
 /* Media Screens */
 
-@media (max-width: 1280px) { 
+@media (min-width: 780px) {
+  body {
+    font-size: clamp(1.125rem, 0.8929rem + 0.4762vw, 1.25rem);
+  }
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
 
-    .container {
-        display: grid;
-        align-items: center; 
-        grid-template-columns: 70% 30%;
-        height: 100vh;
-    }
-
-    .text {
-        margin-left: -0.5rem;
-    }
-
-    P {
-        font-size: 18px;
-    }
-
-    h3 {
-        font-size: 12px;
-        padding-right: 6em;
-    }
-
+  .image {
+    min-height: 100vh;
+  }
 }
 
-@media (max-width: 500px) {
-
-    .container {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
-    img {
-        height: 50vh;
-    }
-    
-    .text {
-        margin-top: 2em;
-        margin-left: 1em;
-    }
-
-    p {
-        font-size: 22px;
-    }
-
-    h3 {
-        font-size: 18px;
-        padding-right: 1em;
-    }
-
+@media (min-width: 970px) {
+  .container {
+    grid-template-columns: 60% 40%;
+  }
 }
 
-@media (max-width: 320px) {
-
-    p {
-        font-size: 18px;
-    }
-
-    h3 {
-        font: 8px;
-    }
-
+@media (min-width: 1350px) {
+  .container {
+    grid-template-columns: 70% 30%;
+  }
 }
